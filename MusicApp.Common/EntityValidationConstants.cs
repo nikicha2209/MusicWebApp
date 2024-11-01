@@ -15,8 +15,22 @@ namespace MusicApp.Common
 
             public const string DurationMinValue = "00:00:01";
             public const string DurationMaxValue = "24:00:00";
+
+            public const int SpotifyIdMaxLength = 22;
         }
 
-        
+        public static class Artist
+        {
+            public const int NameMinLength = 3;
+            public const int NameMaxLength = 30;
+
+            public const int BiographyMinLength = 30;
+            public const int BiographyMaxLength = 1000;
+
+            public const int ImageUrlMinLength = 5;
+            public const int ImageUrlMaxLength = 70;
+
+            public const int SpotifyIdMaxLength = 22;
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace MusicApp.Data.Models
         public Guid ArtistId { get; set; }
 
         [Required]
+        [MaxLength(SpotifyIdMaxLength)]
         public string SpotifyId { get; set; } = null!;
     }
 }

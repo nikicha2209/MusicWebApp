@@ -1,19 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using static MusicApp.Common.EntityValidationConstants.Song;
 
 namespace MusicApp.Data.Models
 {
     public class Song
     {
+        [Key]
         public Guid Id { get; set; }
-        public string Title { get; set; }
+
+        [Required]
+        [MaxLength(TitleMaxLength)]
+        public string Title { get; set; } = null!;
+
+        [Required]
+        [Range(typeof(TimeSpan), DurationMinValue, DurationMaxValue)]
         public TimeSpan Duration { get; set; }
+
+        [Required]
+        public Album Album { get; set; } = null!;
         public Guid AlbumId { get; set; }
-        public Album Album { get; set; }
+
+        [Required]
+        public Artist Artist { get; set; } = null!;
         public Guid ArtistId { get; set; }
-        public Artist Artist { get; set; }
+
+        [Required]
+        public string SpotifyId { get; set; } = null!;
     }
 }

@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+using MusicWebApp.Data;
+using MusicWebApp.Data.Models;
+
 namespace MusicWebApp
 {
     public class Program
@@ -5,6 +9,13 @@ namespace MusicWebApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDefaultIdentity<ApplicationUser>(cfg =>
+                {
+
+                })
+                .AddRoles<IdentityRole<Guid>>()
+                .AddEntityFrameworkStores<MusicDbContext>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -24,11 +35,14 @@ namespace MusicWebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.MapRazorPages();
 
             app.Run();
         }

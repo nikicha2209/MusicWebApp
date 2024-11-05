@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MusicWebApp.Data.Models\MusicWebApp.Data.Models.csproj" />
+    <ProjectReference Include="..\MusicWebApp.Data\MusicWebApp.Data.csproj" />
+  </ItemGroup>
+
 </Project>

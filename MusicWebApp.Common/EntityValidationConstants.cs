@@ -22,7 +22,15 @@
             public const string DurationMinValue = "00:00:01";
             public const string DurationMaxValue = "24:00:00";
 
+        }
 
+        public static class Álbum
+        {
+            public const int TitleMinLength = 3;
+            public const int TitleMaxLength = 30;
+
+            public const int ImageUrlMinLength = 5;
+            public const int ImageUrlMaxLength = 70;
         }
     }
 }

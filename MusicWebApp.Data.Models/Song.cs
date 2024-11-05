@@ -21,14 +21,14 @@ namespace MusicWebApp.Data.Models
 
         [Required]
         [ForeignKey(nameof(ArtistId))]
-        public Artist Artist { get; set; } = null!;
+        public virtual Artist Artist { get; set; } = null!;
 
         [Required]
         public Guid ArtistId { get; set; }
 
 
         [ForeignKey(nameof(AlbumId))]
-        public Album? Album { get; set; }
+        public virtual Album? Album { get; set; }
 
         [Required]
         public Guid? AlbumId { get; set; } //it's possible for a song to not be part of any album

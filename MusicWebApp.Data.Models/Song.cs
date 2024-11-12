@@ -30,7 +30,22 @@ namespace MusicWebApp.Data.Models
         [ForeignKey(nameof(AlbumId))]
         public virtual Album? Album { get; set; }
 
+        public Guid? AlbumId { get; set; }
+
+
         [Required]
-        public Guid? AlbumId { get; set; } //it's possible for a song to not be part of any album
+        [MaxLength(YouTubeVideoIdMaxLength)]
+        public string YouTubeVideoId { get; set; } = null!;
+
+
+        [MaxLength(YouTubeUrlMaxLength)]
+        public string? YouTubeUrl => YouTubeVideoId != null ? $"https://www.youtube.com/watch?v={YouTubeVideoId}" : null;
+
+
+        public DateTime? PublishedAt { get; set; }
+
+
+        [MaxLength(ThumbnailUrlMaxLength)]
+        public string? ThumbnailUrl { get; set; }   
     }
 }

@@ -20,5 +20,9 @@ namespace MusicWebApp.Data.Models
         public string? ImageUrl { get; set; }
         public virtual ICollection<Song> Songs { get; set; } = new HashSet<Song>();
         public virtual ICollection<Album> Albums { get; set; } = new HashSet<Album>();
+
+
+        [MaxLength(YouTubeChannelTitleMaxLength)]
+        public string? YouTubeChannelTitle { get; set; }
     }
 }

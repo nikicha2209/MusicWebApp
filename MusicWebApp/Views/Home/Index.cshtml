@@ -1,8 +1,204 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Грамофон";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+   
+    .card-img-top {
+        height: 250px; 
+        object-fit: cover; 
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between; 
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; 
+    }
+
+
+    .feature-item {
+        padding: 20px;
+        background-color: #f8f9fa; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .feature-item:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px); 
+    }
+
+    .feature-icon {
+        font-size: 40px; 
+    }
+
+    .feature-text {
+        font-size: 16px;
+        color: #6c757d;
+    }
+
+    .homepage-hero {
+        position: relative;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1656283384093-1e227e621fad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVzaWMlMjBjb25jZXJ0fGVufDB8fDB8fHww') center center / cover no-repeat;
+        height: 80vh;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .homepage-hero h1,
+    .homepage-hero p {
+        z-index: 1;
+    }
+
+    .feature-item {
+        padding: 20px;
+        background-color: #f8f9fa; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; 
+    }
+
+        .feature-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px); 
+        }
+
+    .feature-icon {
+        font-size: 40px; 
+    }
+
+    .feature-text {
+        font-size: 16px;
+        color: #6c757d;
+    }
+
+    .homepage-hero {
+        position: relative;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1656283384093-1e227e621fad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVzaWMlMjBjb25jZXJ0fGVufDB8fDB8fHww') center center / cover no-repeat;
+        height: 80vh;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .homepage-hero h1,
+    .homepage-hero p {
+        z-index: 1;
+    }
+
+    .container {
+        max-width: 1200px; 
+    }
+</style>
+
+<a href="Animated_Icons_View.cshtml">Виж Анимирани Инструменти</a>
+
+<!-- Главен Секция с Фон и Градиент -->
+<div class="homepage-hero">
+    <div class="overlay"></div>
+    <div class="container text-center text-white d-flex flex-column justify-content-center align-items-center" style="position: relative; z-index: 1; height: 100%;">
+        <h1 class="display-4 font-weight-bold">Добре Дошли в Грамофон</h1>
+        <p class="lead mt-3 mb-5">Създайте вашите любими плейлисти, открийте нова музика и споделете страстта си към музиката!</p>
+        <a href="/Songs" class="btn btn-primary btn-lg mx-2 mb-2">🎵 Разгледай Песни</a>
+        <a href="/Account/Register" class="btn btn-warning btn-lg mx-2 mb-2">Регистрация</a>
+    </div>
+</div>
+
+<!-- Раздел за Основни Функции -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="feature-item p-4 rounded shadow">
+                <div class="feature-icon mb-3">
+                    <i class="fas fa-headphones text-primary"></i>
+                </div>
+                <h3>Персонализирани Плейлисти</h3>
+                <p class="feature-text">Създайте и споделете свои собствени плейлисти с любимата ви музика, готова за слушане по всяко време.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="feature-item p-4 rounded shadow">
+                <div class="feature-icon mb-3">
+                    <i class="fas fa-users text-warning"></i>
+                </div>
+                <h3>Форум за Дискусии</h3>
+                <p class="feature-text">Присъединете се към музикалните дискусии, коментирайте песни и открийте нови приятели.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="feature-item p-4 rounded shadow">
+                <div class="feature-icon mb-3">
+                    <i class="fas fa-star text-success"></i>
+                </div>
+                <h3>Препоръки</h3>
+                <p class="feature-text">Получете препоръки на базата на вашите предпочитания и история на слушане.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Playlists -->
+<div class="container my-5">
+    <h2 class="text-center font-weight-bold">Популярни Плейлисти</h2>
+    <p class="text-center text-muted mb-4">Най-слушаните плейлисти тази седмица.</p>
+    <div class="row">
+        <!-- Playlist 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGFydHklMjBtdXNpY3xlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Playlist 1">
+                <div class="card-body">
+                    <h5 class="card-title">Party Hits</h5>
+                    <p class="card-text">Започнете партито с най-добрите хитове на седмицата.</p>
+                    <a href="/Playlists/1" class="btn btn-primary">Слушай сега</a>
+                </div>
+            </div>
+        </div>
+        <!-- Playlist 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1705747075445-9b93f4d0984f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoaWxsJTIwdmliZXN8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Playlist 2">
+                <div class="card-body">
+                    <h5 class="card-title">Chill Vibes</h5>
+                    <p class="card-text">Релаксирайте с подбрани спокойни песни за всеки момент.</p>
+                    <a href="/Playlists/2" class="btn btn-primary">Слушай сега</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Playlist 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://plus.unsplash.com/premium_photo-1663046050988-1b873a56dced?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9jayUyMG11c2ljfGVufDB8fDB8fHww" class="card-img-top" alt="Playlist 3">
+                <div class="card-body">
+                    <h5 class="card-title">Rock Classics</h5>
+                    <p class="card-text">Насладете се на вечни рок класики от най-добрите групи.</p>
+                    <a href="/Playlists/3" class="btn btn-primary">Слушай сега</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

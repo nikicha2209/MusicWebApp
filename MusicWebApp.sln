@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWebApp", "MusicWebApp\MusicWebApp.csproj", "{EE49A738-07C7-4FFA-99A2-340AC3681473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicWebApp", "MusicWebApp\MusicWebApp.csproj", "{EE49A738-07C7-4FFA-99A2-340AC3681473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWebApp.Data.Models", "MusicWebApp.Data.Models\MusicWebApp.Data.Models.csproj", "{3C55FF8A-DB68-4C47-B0B1-D5431CB7E788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicWebApp.Data.Models", "MusicWebApp.Data.Models\MusicWebApp.Data.Models.csproj", "{3C55FF8A-DB68-4C47-B0B1-D5431CB7E788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWebApp.Common", "MusicWebApp.Common\MusicWebApp.Common.csproj", "{07F601E9-7C78-4CD7-B917-0E9EFFB80F73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicWebApp.Common", "MusicWebApp.Common\MusicWebApp.Common.csproj", "{07F601E9-7C78-4CD7-B917-0E9EFFB80F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWebApp.Data", "MusicWebApp.Data\MusicWebApp.Data.csproj", "{4C46680A-44BB-43BB-92EC-A152E8A02763}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicWebApp.Data", "MusicWebApp.Data\MusicWebApp.Data.csproj", "{4C46680A-44BB-43BB-92EC-A152E8A02763}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -41,6 +41,8 @@ namespace MusicWebApp.Data.Models
         [MaxLength(YouTubeUrlMaxLength)]
         public string? YouTubeUrl => YouTubeVideoId != null ? $"https://www.youtube.com/watch?v={YouTubeVideoId}" : null;
 
+        [MaxLength(DescriptionMaxLength)]
+        public string? Description { get; set; }
 
         public DateTime? PublishedAt { get; set; }
 

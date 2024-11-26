@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static MusicWebApp.Common.EntityValidationConstants.Álbum;
+using static MusicWebApp.Common.EntityValidationConstants.Album;
 
 namespace MusicWebApp.Data.Models
 {

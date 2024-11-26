@@ -12,11 +12,6 @@ namespace MusicWebApp.Data
         {
         }
 
-        public MusicDbContext()
-        {
-            
-        }
-
         public virtual DbSet<Artist> Artists { get; set; } = null!;
         public virtual DbSet<Song> Songs { get; set; } = null!;
         public virtual DbSet<Album> Albums { get; set; } = null!;

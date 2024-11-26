@@ -15,7 +15,7 @@ namespace MusicWebApp.Data.Models
         public string Title { get; set; } = null!;
 
         [Required]
-        [Range(typeof(TimeSpan),DurationMinValue, DurationMaxValue)]
+        [Range(typeof(TimeSpan), DurationMinValue, DurationMaxValue)]
         public TimeSpan Duration { get; set; } = TimeSpan.Zero;
 
 
@@ -39,7 +39,8 @@ namespace MusicWebApp.Data.Models
 
 
         [MaxLength(YouTubeUrlMaxLength)]
-        public string? YouTubeUrl => YouTubeVideoId != null ? $"https://www.youtube.com/watch?v={YouTubeVideoId}" : null;
+        public string? YouTubeUrl => !string.IsNullOrEmpty(YouTubeVideoId) ?
+            $"https://www.youtube.com/embed/{YouTubeVideoId}?autoplay=1" : null;
 
         [MaxLength(DescriptionMaxLength)]
         public string? Description { get; set; }
@@ -48,6 +49,6 @@ namespace MusicWebApp.Data.Models
 
 
         [MaxLength(ThumbnailUrlMaxLength)]
-        public string? ThumbnailUrl { get; set; }   
+        public string? ThumbnailUrl { get; set; }
     }
 }

@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MusicWebApp.Data;
 using MusicWebApp.Data.Models;
+using MusicWebApp.Services.Data;
+using MusicWebApp.Services.Data.Interfaces;
 
 namespace MusicWebApp
 {
@@ -11,15 +14,19 @@ namespace MusicWebApp
         {
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
             builder.Services.AddDbContext<MusicDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            builder.Services.AddDefaultIdentity<ApplicationUser>(cfg =>
-                {
-
-                })
+            builder.Services.AddDefaultIdentity<ApplicationUser>(cfg => { })
                 .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<MusicDbContext>();
+
+            string youtubeApiKey = builder.Configuration["YouTubeApiKey"] ??
+                                   throw new InvalidOperationException("YouTube API key not found.");
+
+            builder.Services.AddScoped<IYouTubeServiceClient>(provider =>
+                new YouTubeServiceClient(youtubeApiKey, provider.GetRequiredService<MusicDbContext>()));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
